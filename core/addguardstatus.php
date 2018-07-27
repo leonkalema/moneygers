@@ -1,0 +1,101 @@
+<?php
+include_once "../include/commonfunctions.php";
+session_start();
+openDatabaseConnection();
+$action = $_GET['action'];
+$id = decryptValue($_GET['id']);
+if($action == 'edit') {
+	$data = getRowAsArray("SELECT * FROM guardstatus WHERE id = '".$id."'");
+}
+if(isset($_POST['submit'])){
+	$formvalues = array_merge($_POST);
+	if(trim($formvalues['edit']) != ""){
+		$editid = decryptValue($formvalues['edit']);
+		mysql_query("UPDATE  guardstatus SET status = '".$formvalues['status']."', statusvalue = '".$formvalues['statusvalue']."' WHERE id='".$editid."'");
+	} else {
+		mysql_query("INSERT INTO  guardstatus (status, statusvalue, date_of_entry) VALUES ('".$formvalues['status']."', '".$formvalues['statusvalue']."', NOW())");
+	}
+	
+	forwardToPage("manageguardstatus.php");
+}
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Moneyge My Company - <?php if($action == 'edit') {?>          Edit Guard Status            <?php } else {?>            Create Guard Status          <?php } ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../Styles/ultimatesecurity.css" rel="stylesheet" type="text/css">
+<script src="../javascript/smartguard.js" type="text/javascript" language="javascript"></script>
+</head>
+
+<body class="mainbackground" topmargin="0" bottommargin="0">
+<table width="90%" border="0" align="center" cellpadding="2" cellspacing="2" class="outtertablebg">
+  <tr> 
+    <td height="7"></td>
+  </tr>
+  <tr> 
+    <td><?php include "../core/header.php";?></td>
+  </tr> <tr> 
+    <td height="7"></td>
+  </tr>
+  <tr> 
+    <td align="center" valign="top"><table width="100%" border="0" class="contenttableborder" cellspacing="0">
+      <tr>
+        <td class="headings"><a href="manageguardstatus.php">Manage Guard Status</a> &gt; <?php if($action == 'edit') {?>
+          Edit Guard Status
+            <?php } else {?>
+            Create Guard Status
+          <?php } ?> </td>
+      </tr> 
+      <tr>
+        <td align="center"><form action="addguardstatus.php" method="post" name="group" id="group" onSubmit=" return isNotNullOrEmptyString('status', 'Please enter the new status.');"><table width="89%" border="0">
+          <tr>
+            <td width="26%" align="right"><font class="redtext">*</font> is a required field </td>
+            <td width="74%">&nbsp;</td>
+          </tr>
+		
+          <tr>
+            <td height="30" align="right" class="label2">Guard Status:<font class="redtext">*</font></td>
+            <td>
+              &nbsp;
+              <input type="text" name="status" id="status" value="<?php echo $data['status']; ?>">
+              &nbsp;&nbsp;&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="30" align="right"> <span class="label2">Displayed Value:</span><br>(Status will be displayed if there is no value.)</td>
+            <td>&nbsp;
+                <input type="text" name="statusvalue" id="statusvalue" value="<?php echo $data['statusvalue']; ?>">
+              &nbsp;&nbsp;&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="30" align="right" class="label2">&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="right" class="label">&nbsp;</td>
+            <td>&nbsp;
+              <input type="button" name="cancel" id="cancel" value="<< Back" onClick="javascript:history.go(-1);">
+              <input type="submit" name="submit" id="submit" value="Save">
+              <input type="hidden" name="edit" id="edit" value="<?php 
+	if($action == "edit"){
+		echo $_GET['id']; 
+	}
+	?>"></td>
+          </tr>
+        </table>
+        </form></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td align="left" valign="top" class="copyright"><?php include("../include/footer.php");?></td>
+  </tr>
+  <tr> 
+    <td align="left" valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
+
+

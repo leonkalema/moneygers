@@ -1,0 +1,371 @@
+/* CSStyles. Project: SmartGuard. Author: Ash M. Luwambo. Company:NWT Limited */
+body {
+	font-family: Segoe UI, Arial, Tahoma;
+	font-size: 11px;
+	font-weight:normal;
+	color:333;
+	text-decoration: none;
+	background:#fff url("../images/bg.png") fixed;
+	
+
+}
+
+input[type=text] {
+	font-size:14px;
+	font-family:Arial;
+	padding:5px 0px 5px 5px;
+}
+
+input[type=file] {
+	font-size:14px;
+	font-family:Arial;
+	padding:5px 5px 5px 5px;
+}
+
+select {
+	font-size:14px;
+	font-family:Arial;
+	padding:5px 0px 5px 5px;
+}
+
+
+a {
+	color:#333;
+	text-decoration:none;
+}
+table {
+	font-size: 11px;
+	font-weight:normal;
+	text-decoration: none;
+}
+td {
+	font-size: 11px;
+	text-decoration: none;
+}
+textarea {
+	font-size: 11px;
+	font-weight:normal;
+	color:#000000;
+	text-decoration: none;
+
+}
+.bigheaders{
+color:000;
+font-weight:bold;
+font-size:12px;
+}
+
+.outtertablebg {
+width:900px;	
+}
+.ottercellborder {
+border:solid 0px #e1e1e1;
+
+}
+.ottercellborder td{
+background:#fafafa;
+
+}
+.ottercellborder .tabheadings{
+background:#fff;
+padding:15px;
+}
+
+.headertxt {
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight:normal;
+	color:#000;
+	text-decoration: none;
+}
+.headertxt:hover {
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight:normal;
+	color:#000;
+	text-decoration: underline;
+
+}.subnavtxt {
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight:normal;
+	color:#333;
+	text-decoration: none;
+}.list {
+	margin-left:4px;
+	list-style-position: inside;
+	list-style-image: url(../images/bulletstar.gif);
+	}
+.headings {
+	font-family: Rockwell;
+	font-size: 30px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	color:#000000;
+	text-decoration: none;
+	height:20;
+	background-image: url(../images/subheaderbg_blue1.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	padding: 4px;
+}
+.smallerheadings {
+	font-family: Georgia;
+	font-size: 20px;
+	font-style:italic;
+	letter-spacing:-1px;
+	color:#000000;
+	text-decoration: none;
+	padding: 4px;
+}
+
+.tabheadings {
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight:bold;
+	color:#000;;
+	text-decoration: none;
+	background-color: #fff;
+	font-weight:bold;
+	vertical-align:top;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.tabheadingstxt {
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight:bold;
+	color:#000000;
+	text-decoration: none;
+	font-weight:bold;
+}
+.normaltxt {
+	font-family: verdana;
+	font-size: 11px;
+	font-weight:normal;
+	color:#fff;
+	text-decoration: none;
+}
+.normaltxt:hover {
+	font-family: verdana;
+	font-size: 11px;
+	font-weight:normal;
+	color:#fff;
+	text-decoration: none;
+}
+.normaltxtlink {
+	font-family: verdana;
+	font-size: 11px;
+	font-weight:normal;
+	color:#09F;
+	text-decoration:none;
+}
+.normaltxtlink:hover {
+	font-family: verdana;
+	font-size: 11px;
+	font-weight:normal;
+	color:#09F;
+	text-decoration: underline;
+}
+.innertablebg {
+border-bottom:solid 1px #fff;
+padding-top:10px;
+padding-bottom:10px;
+}
+
+.innertableheaderbg {
+	
+	border-bottom:solid 1px #fff;
+	
+}
+.copyright {
+	font-family: verdana;
+	font-size: 10px;
+	font-weight:normal;
+	padding:0px 0px 0px 10px;
+	text-decoration: none;
+	text-align:center;
+}
+.label {
+	font-family: verdana;
+	font-size: 11px;
+	font-weight:normal;
+	text-decoration: none;
+	font-weight:bold;
+	vertical-align:top;
+
+}
+.redtext {
+	color: #FF0000;
+}
+.greentext {
+	color:#009966;
+}
+.contenttableborder {
+	border: 0px; 
+	border-style: solid;
+	border-color: #adaefe;
+
+}
+.oddrow {
+	padding-bottom:5px;
+	padding-top:5px;
+	color:#333;
+	font-size:12px;
+}
+.evenrow {
+	background-color:#fff;
+	color:#000;
+	padding-bottom:5px;
+	padding-top:5px;
+	font-size:12px;
+}
+/*--------------------------------------------------
+  REQUIRED to hide the non-active tab content.
+  But do not hide them in the print stylesheet!
+  --------------------------------------------------*/
+.tabberlive .tabbertabhide {
+ display:none;
+}
+
+/*--------------------------------------------------
+  .tabber = before the tabber interface is set up
+  .tabberlive = after the tabber interface is set up
+  --------------------------------------------------*/
+.tabber {
+}
+.tabberlive {
+ margin-top:1em;
+}
+
+/*--------------------------------------------------
+  ul.tabbernav = the tab navigation list
+  li.tabberactive = the active tab
+  --------------------------------------------------*/
+ul.tabbernav
+{
+ margin:0;
+ padding: 3px 0;
+ border-bottom: 1px solid #778;
+ font: bold 12px Verdana, sans-serif;
+}
+
+ul.tabbernav li
+{
+ list-style: none;
+ margin: 0;
+ display: inline;
+}
+
+ul.tabbernav li a
+{
+ padding: 3px 0.5em;
+ margin-left: 3px;
+ border: 1px solid #778;
+ border-bottom: none;
+ background: #DDE;
+ text-decoration: none;
+}
+
+ul.tabbernav li a:link { color: #448; }
+ul.tabbernav li a:visited { color: #667; }
+
+ul.tabbernav li a:hover
+{
+ color: #000;
+ background: #AAE;
+ border-color: #227;
+}
+
+ul.tabbernav li.tabberactive a
+{
+ background-color: #fff;
+ border-bottom: 1px solid #fff;
+}
+
+ul.tabbernav li.tabberactive a:hover
+{
+ color: #000;
+ background: white;
+ border-bottom: 1px solid white;
+}
+
+/*--------------------------------------------------
+  .tabbertab = the tab content
+  Add style only after the tabber interface is set up (.tabberlive)
+  --------------------------------------------------*/
+.tabberlive .tabbertab {
+ padding:5px;
+ border:1px solid #aaa;
+ border-top:0;
+
+ /* If you don't want the tab size changing whenever a tab is changed
+    you can set a fixed height */
+
+ /* height:200px; */
+
+ /* If you set a fix height set overflow to auto and you will get a
+    scrollbar when necessary */
+
+ /* overflow:auto; */
+}
+
+/* If desired, hide the heading since a heading is provided by the tab */
+.tabberlive .tabbertab h2 {
+ display:none;
+ color:#ffff00;
+}
+.tabberlive .tabbertab h3 {
+ display:none;
+}
+
+/* Example of using an ID to set different styles for the tabs on the page */
+.tabberlive#tab1 {
+}
+.tabberlive#tab2 {
+}
+.tabberlive#tab2 .tabbertab {
+ height:200px;
+ overflow:auto;
+}
+
+.disabledfield {
+	background-color: #cccc99;
+}
+.disabledfieldcheckbox {
+	background-color: #cccc99;
+	border: 0px;
+}
+.tinytxt {
+	font-size:9px;
+	font-weight:normal;
+	text-decoration:none;
+}
+.subheadingtxt {
+ color: #000;
+ background: #AAE;
+ border-color: #227;
+ font-weight:bold;
+ padding:8px;
+ padding-left:15px;
+}
+.sectiontxt {
+ color: #fff;
+ font-weight:bold;
+}
+#login input{
+font-family:Tahoma;
+font-size:11px;
+padding-left: 1px;
+padding:1px;
+}
+a,a:visited{ text-decoration:none; color:#000000; }
+a:hover{ text-decoration:none; color:#000000; font-weight:bolder;}
+.label2 {
+	font-family: verdana;
+	font-size: 11px;
+	font-weight:normal;
+	color:#fff;
+	text-decoration: none;
+	font-weight:bold;
+	}

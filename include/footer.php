@@ -1,0 +1,1 @@
+Software by <a href="http://newwavetech.co.ug" target="_blank">New Wave Technologies</a> | All Rights Reserved
